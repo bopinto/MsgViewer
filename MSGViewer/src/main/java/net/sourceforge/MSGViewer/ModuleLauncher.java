@@ -165,7 +165,6 @@ public class ModuleLauncher extends BaseModuleLauncher {
         if (Setup.is_mac_system()) {
             System.setProperty("apple.laf.useScreenMenuBar", "true");
             System.setProperty("com.apple.mrj.application.apple.menu.about.name", "MsgViewer");
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             // also: when running the app, pass '-Xdock:name="MsgViewer"'
         }
 
