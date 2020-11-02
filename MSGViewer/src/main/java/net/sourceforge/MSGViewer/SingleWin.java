@@ -21,22 +21,25 @@ public class SingleWin extends BaseDialog implements MainDialog, OpenNewMailInte
     private static String last_path = null;
     private String dialog_id;
 
+    private static final int DEFAULT_WINDOW_WIDTH = 600;
+    private static final int DEFAULT_WINDOW_HEIGHT = 400;
+
     /**
      * Creates new form SingleWin
      */
-    public SingleWin(Root root, final String file_name )
-    {
-        super(root, file_name != null ? (root.MlM(root.getAppTitle()) + ": " + file_name) : root.getAppTitle() );
+    public SingleWin(Root root, final String file_name) {
+        super(root, file_name != null ? (root.MlM(root.getAppTitle()) + ": " + file_name) : root.getAppTitle());
         initComponents();
 
-        last_path = root.getSetup().getLocalConfig("LastPath","");
+        last_path = root.getSetup().getLocalConfig("LastPath", "");
 
         viewerPanel.setRoot(root, this);
         viewerPanel.setopenNewMailInterface(this);
 
-        if( file_name == null )
-        {
-            viewerPanel.getHeaderPane().setText(MlM("Drag a msg file into this window") );
+        if (file_name == null) {
+            viewerPanel.getHeaderPane().setVisible(false);
+            viewerPanel.getBodyPane().setBackground(java.awt.Color.GRAY);
+            viewerPanel.getBodyPane().setText(MlM("Drag a msg file into this window"));
         } else {
             EventQueue.invokeLater(() -> {
                 jMNav.setEnabled(file_name.toLowerCase().endsWith(".msg"));
@@ -44,47 +47,43 @@ public class SingleWin extends BaseDialog implements MainDialog, OpenNewMailInte
             });
         }
 
-
-        registerActionKeyListener(KeyStroke.getKeyStroke(KeyEvent.VK_N,0), () -> {
-            if( jMNav.isEnabled() )
+        registerActionKeyListener(KeyStroke.getKeyStroke(KeyEvent.VK_N, 0), () -> {
+            if (jMNav.isEnabled())
                 jMNavActionPerformed(null);
         });
 
-        new EditorDropTarget(this,viewerPanel.getHeaderPane());
-        new EditorDropTarget(this,viewerPanel.getBodyPane());
+        new EditorDropTarget(this, viewerPanel.getHeaderPane());
+        new EditorDropTarget(this, viewerPanel.getBodyPane());
     }
 
     @Override
-    public String getUniqueDialogIdentifier(Object requester)
-    {
+    public String getUniqueDialogIdentifier(Object requester) {
         /*
-         * dadurch können wir später den Titel ändern, ohne das sich dadurch
-         * die Dialog ID verändert.
+         * dadurch können wir später den Titel ändern, ohne das sich dadurch die Dialog
+         * ID verändert.
          */
-        if( dialog_id == null )
-         dialog_id = super.getUniqueDialogIdentifier(requester);
+        if (dialog_id == null)
+            dialog_id = super.getUniqueDialogIdentifier(requester);
 
         return dialog_id;
     }
 
-    void cleanUp()
-    {
+    void cleanUp() {
 
     }
 
     @Override
-    public void close()
-    {
+    public void close() {
         cleanUp();
 
-        if( last_path != null )
+        if (last_path != null)
             root.getSetup().setLocalConfig("LastPath", last_path);
-
 
         super.close();
     }
 
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         viewerPanel = new net.sourceforge.MSGViewer.ViewerPanel();
@@ -155,32 +154,30 @@ public class SingleWin extends BaseDialog implements MainDialog, OpenNewMailInte
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(viewerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup().addComponent(viewerPanel,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, DEFAULT_WINDOW_WIDTH, Short.MAX_VALUE)
+                                .addGap(0, 0, 0)));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(viewerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup().addComponent(viewerPanel,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, DEFAULT_WINDOW_HEIGHT, Short.MAX_VALUE)
+                                .addGap(0, 0, 0)));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMQuitActionPerformed
+    private void jMQuitActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jMQuitActionPerformed
 
         close();
 
-    }//GEN-LAST:event_jMQuitActionPerformed
+    }// GEN-LAST:event_jMQuitActionPerformed
 
-    private void jMOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMOptionsActionPerformed
-         invokeDialogUnique(new LocalConfig(root));
-    }//GEN-LAST:event_jMOptionsActionPerformed
+    private void jMOptionsActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jMOptionsActionPerformed
+        invokeDialogUnique(new LocalConfig(root));
+    }// GEN-LAST:event_jMOptionsActionPerformed
 
-    private void jFileOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileOpenActionPerformed
+    private void jFileOpenActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jFileOpenActionPerformed
 
         JFileChooser fc = new JFileChooser();
 
@@ -201,9 +198,9 @@ public class SingleWin extends BaseDialog implements MainDialog, OpenNewMailInte
             last_path = file.getPath();
             loadMessage(file.getPath());
         }
-    }//GEN-LAST:event_jFileOpenActionPerformed
+    }// GEN-LAST:event_jFileOpenActionPerformed
 
-    private void jMFileSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMFileSaveActionPerformed
+    private void jMFileSaveActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jMFileSaveActionPerformed
 
         final JFileChooser fc = new JFileChooser();
         fc.setAcceptAllFileFilterUsed(false);
@@ -227,7 +224,8 @@ public class SingleWin extends BaseDialog implements MainDialog, OpenNewMailInte
             public void do_stuff() throws Exception {
                 File export_file = file;
                 last_path = file.getPath();
-                if (!file.getName().toLowerCase().endsWith(".msg") && !file.getName().toLowerCase().endsWith(".eml") && !file.getName().toLowerCase().endsWith(".mbox")) {
+                if (!file.getName().toLowerCase().endsWith(".msg") && !file.getName().toLowerCase().endsWith(".eml")
+                        && !file.getName().toLowerCase().endsWith(".mbox")) {
                     if (fc.getFileFilter() == msg_filter) {
                         export_file = new File(file.getAbsolutePath() + ".msg");
                     } else if (fc.getFileFilter() == eml_filter) {
@@ -240,47 +238,44 @@ public class SingleWin extends BaseDialog implements MainDialog, OpenNewMailInte
             }
         };
 
-    }//GEN-LAST:event_jMFileSaveActionPerformed
+    }// GEN-LAST:event_jMFileSaveActionPerformed
 
-    private void jMAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMAboutActionPerformed
+    private void jMAboutActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jMAboutActionPerformed
 
         invokeDialogUnique(new About(root));
 
-    }//GEN-LAST:event_jMAboutActionPerformed
+    }// GEN-LAST:event_jMAboutActionPerformed
 
-    private void jMChangelogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMChangelogActionPerformed
+    private void jMChangelogActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jMChangelogActionPerformed
 
         invokeDialogUnique(new LocalHelpWin(root, "ChangeLog"));
 
-    }//GEN-LAST:event_jMChangelogActionPerformed
+    }// GEN-LAST:event_jMChangelogActionPerformed
 
-    private void jMPluginsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMPluginsActionPerformed
+    private void jMPluginsActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jMPluginsActionPerformed
 
         invokeDialogUnique(new AboutPlugins(root));
 
-    }//GEN-LAST:event_jMPluginsActionPerformed
+    }// GEN-LAST:event_jMPluginsActionPerformed
 
-    private void jMDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMDetailActionPerformed
+    private void jMDetailActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jMDetailActionPerformed
 
-        if( viewerPanel.getMessage() != null)
-             invokeDialogUnique(new Internals(root, viewerPanel.getMessage()));
+        if (viewerPanel.getMessage() != null)
+            invokeDialogUnique(new Internals(root, viewerPanel.getMessage()));
 
-    }//GEN-LAST:event_jMDetailActionPerformed
+    }// GEN-LAST:event_jMDetailActionPerformed
 
-    private void jMNavActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMNavActionPerformed
+    private void jMNavActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jMNavActionPerformed
 
         invokeDialogUnique(new MSGNavigator(root, new File(viewerPanel.getFileName())));
 
-    }//GEN-LAST:event_jMNavActionPerformed
-
+    }// GEN-LAST:event_jMNavActionPerformed
 
     @Override
-    public void loadMessage(String file_name)
-    {
+    public void loadMessage(String file_name) {
         logger.info("filename: " + file_name);
 
-        if( file_name.startsWith("file://") )
-        {
+        if (file_name.startsWith("file://")) {
             file_name = URLDecoder.decode(file_name, StandardCharsets.UTF_8);
             file_name = file_name.substring(7);
 
@@ -288,24 +283,20 @@ public class SingleWin extends BaseDialog implements MainDialog, OpenNewMailInte
 
         jMNav.setEnabled(file_name.toLowerCase().endsWith(".msg"));
 
-        if( viewerPanel.getMessage() == null )
-        {
+        if (viewerPanel.getMessage() == null) {
             viewerPanel.parse(file_name);
-        }
-        else
-        {
-            SingleWin win = new SingleWin( root, file_name );
+        } else {
+            SingleWin win = new SingleWin(root, file_name);
 
-            if( !menubar.isVisible() )
+            if (!menubar.isVisible())
                 win.hideMenuBar();
 
-            invokeMainDialog( win );
+            invokeMainDialog(win);
         }
     }
 
     @Override
-    public void openMail(Root root, String file)
-    {
+    public void openMail(Root root, String file) {
         SingleWin win = new SingleWin(root, file);
 
         if (!menubar.isVisible()) {
@@ -317,7 +308,7 @@ public class SingleWin extends BaseDialog implements MainDialog, OpenNewMailInte
 
     @Override
     public void hideMenuBar() {
-       menubar.setVisible(false);
+        menubar.setVisible(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

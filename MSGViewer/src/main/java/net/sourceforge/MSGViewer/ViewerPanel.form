@@ -1,187 +1,187 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
-    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
-    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
-    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
-    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
-    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
-    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
-    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
-    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
-    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0" />
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true" />
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1" />
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0" />
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false" />
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2" />
   </AuxValues>
 
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jSplitPane" alignment="0" max="32767" attributes="0"/>
+        <Component id="jSplitPane" alignment="0" max="32767" attributes="0" />
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jSplitPane" alignment="0" pref="339" max="32767" attributes="0"/>
+        <Component id="jSplitPane" alignment="0" pref="339" max="32767" attributes="0" />
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JSplitPane" name="jSplitPane">
       <Properties>
-        <Property name="orientation" type="int" value="0"/>
+        <Property name="orientation" type="int" value="0" />
       </Properties>
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout"/>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" />
       <SubComponents>
         <Container class="javax.swing.JScrollPane" name="headerScrollPane">
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true" />
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0" />
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true" />
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
-              <JSplitPaneConstraints position="top"/>
+              <JSplitPaneConstraints position="top" />
             </Constraint>
           </Constraints>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout" />
           <SubComponents>
             <Component class="javax.swing.JEditorPane" name="header">
               <Properties>
-                <Property name="editable" type="boolean" value="false"/>
+                <Property name="editable" type="boolean" value="false" />
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="header.addPropertyChangeListener(&quot;paintingForPrint&quot;, new PrintListener());"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="header.addPropertyChangeListener(&quot;paintingForPrint&quot;, new PrintListener());" />
               </AuxValues>
             </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="MainPanel">
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true" />
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0" />
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
-              <JSplitPaneConstraints position="right"/>
+              <JSplitPaneConstraints position="right" />
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="buttonsPanel" alignment="1" max="32767" attributes="0"/>
-                  <Component id="bodyScrollPane" alignment="1" max="32767" attributes="0"/>
+                <Component id="buttonsPanel" alignment="1" max="32767" attributes="0" />
+                <Component id="bodyScrollPane" alignment="1" max="32767" attributes="0" />
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="bodyScrollPane" pref="276" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="buttonsPanel" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                <Group type="102" alignment="0" attributes="0">
+                  <Component id="bodyScrollPane" pref="276" max="32767" attributes="0" />
+                  <EmptySpace max="-2" attributes="0" />
+                  <Component id="buttonsPanel" min="-2" max="-2" attributes="0" />
+                </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JScrollPane" name="bodyScrollPane">
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true" />
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0" />
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true" />
               </AuxValues>
 
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout" />
               <SubComponents>
                 <Component class="javax.swing.JEditorPane" name="body">
                   <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="editable" type="boolean" value="false" />
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="body.addPropertyChangeListener(&quot;paintingForPrint&quot;, new PrintListener());"/>
+                    <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="body.addPropertyChangeListener(&quot;paintingForPrint&quot;, new PrintListener());" />
                   </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="buttonsPanel">
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true" />
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0" />
               </AuxValues>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jRRTF" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jRText" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="JCBfix" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jSFontSize" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="fontSizeLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="95" max="32767" attributes="0"/>
-                      </Group>
+                    <Group type="102" alignment="0" attributes="0">
+                      <Component id="jRRTF" min="-2" max="-2" attributes="0" />
+                      <EmptySpace max="-2" attributes="0" />
+                      <Component id="jRText" min="-2" max="-2" attributes="0" />
+                      <EmptySpace type="unrelated" max="-2" attributes="0" />
+                      <Component id="JCBfix" min="-2" max="-2" attributes="0" />
+                      <EmptySpace max="-2" attributes="0" />
+                      <Component id="jSFontSize" min="-2" max="-2" attributes="0" />
+                      <EmptySpace max="-2" attributes="0" />
+                      <Component id="fontSizeLabel" min="-2" max="-2" attributes="0" />
+                      <EmptySpace min="0" pref="95" max="32767" attributes="0" />
+                    </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                                  <Component id="jRRTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jRText" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JCBfix" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jSFontSize" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="fontSizeLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                    <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0" />
+                      <Group type="103" groupAlignment="0" attributes="0">
+                        <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                          <Component id="jRRTF" alignment="3" min="-2" max="-2" attributes="0" />
+                          <Component id="jRText" alignment="3" min="-2" max="-2" attributes="0" />
+                          <Component id="JCBfix" alignment="3" min="-2" max="-2" attributes="0" />
+                        </Group>
+                        <Component id="jSFontSize" alignment="1" min="-2" max="-2" attributes="0" />
+                        <Component id="fontSizeLabel" alignment="1" min="-2" max="-2" attributes="0" />
                       </Group>
+                    </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JRadioButton" name="jRRTF">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="RTF"/>
+                    <Property name="text" type="java.lang.String" value="RTF" />
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRRTFActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRRTFActionPerformed" />
                   </Events>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="jRText">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Text"/>
+                    <Property name="text" type="java.lang.String" value="Text" />
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRTextActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRTextActionPerformed" />
                   </Events>
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="JCBfix">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Fixed Font"/>
+                    <Property name="text" type="java.lang.String" value="Fixed Font" />
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JCBfixActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JCBfixActionPerformed" />
                   </Events>
                 </Component>
                 <Component class="javax.swing.JSlider" name="jSFontSize">
                   <Events>
-                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSFontSizeStateChanged"/>
+                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSFontSizeStateChanged" />
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="fontSizeLabel">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Fontsize"/>
+                    <Property name="text" type="java.lang.String" value="Fontsize" />
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+                    <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true" />
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0" />
                   </AuxValues>
                 </Component>
               </SubComponents>
