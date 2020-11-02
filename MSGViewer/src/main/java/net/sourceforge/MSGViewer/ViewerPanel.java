@@ -642,25 +642,30 @@ public class ViewerPanel extends javax.swing.JPanel implements HyperlinkListener
 
     private void printFrom(StringBuilder sb) {
         sb.append(parent.MlM("From: "));
-        if (message.getFromEmail() == null && message.getFromName() == null) {
-        } else if (message.getFromEmail() == null) {
-            sb.append(parent.MlM("From: ")).append(message.getFromName());
-        } else if (message.getFromName() == null) {
+        String messageFromName = message.getFromName();
+        String messageFromEmail = message.getFromEmail() != null && ViewerHelper.isValidEmail(message.getFromEmail())
+                ? message.getFromEmail()
+                : message.getFromSMTPAddress();
+
+        if (messageFromEmail == null && messageFromName == null) {
+            // add nothing
+        } else if (messageFromEmail == null) {
+            sb.append(parent.MlM("From: ")).append(messageFromName);
+        } else if (messageFromName == null) {
             sb.append("<a href=\"mailto:");
-            sb.append(message.getFromEmail());
+            sb.append(messageFromEmail);
             sb.append("\">");
-            sb.append(message.getFromEmail());
+            sb.append(messageFromEmail);
         } else {
             sb.append("<a href=\"mailto:");
-            sb.append(message.getFromEmail());
+            sb.append(messageFromEmail);
             sb.append("\">");
-            sb.append(message.getFromName());
+            sb.append(messageFromName);
         }
 
-        if( message.getFromEmail() != null && message.getFromEmail().contains("@") )
-        {
+        if (messageFromEmail != null && ViewerHelper.isValidEmail(messageFromEmail)) {
             sb.append(" &lt;");
-            sb.append(message.getFromEmail());
+            sb.append(messageFromEmail);
             sb.append("&gt;");
         }
 
@@ -683,8 +688,18 @@ public class ViewerPanel extends javax.swing.JPanel implements HyperlinkListener
     private static String asMailto(RecipientEntry recipient) {
         String name = recipient.getName();
         String email = recipient.getEmail();
-        if (isNotBlank(email)) {
-            return "<a href='mailto:" + email + "'>" + (isNotBlank(name) ? name + " &lt;" + email + "&gt;" : email) + "</a>";
+        String smtp = recipient.getSmtp();
+        String mailTo = "";
+
+        if (isNotBlank(email) && ViewerHelper.isValidEmail(email)) {
+            mailTo = email;
+        } else if (isNotBlank(smtp)) {
+            mailTo = smtp;
+        }
+
+        if (isNotBlank(mailTo)) {
+            return "<a href='mailto:" + mailTo + "'>" + (isNotBlank(name) ? name + " &lt;" + mailTo + "&gt;" : mailTo)
+                    + "</a>";
         }
         return name;
     }
