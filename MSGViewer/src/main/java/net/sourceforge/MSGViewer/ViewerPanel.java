@@ -630,11 +630,10 @@ public class ViewerPanel extends javax.swing.JPanel implements HyperlinkListener
 
     private static boolean hasValidNameAndEmail(RecipientEntry recipient) {
         String name = recipient.getName();
-        String email = recipient.getEmail();
-        String smtp = recipient.getSmtp();
+        String email = getEmail(recipient);
 
         boolean isValidName = isNotBlank(name);
-        boolean isValidEmail = getEmail(recipient);
+        boolean isValidEmail = isNotBlank(email) && ViewerHelper.isValidEmail(email);
         return isValidName && (isValidEmail);
     }
 

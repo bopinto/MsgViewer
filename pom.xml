@@ -7,8 +7,8 @@
     <packaging>pom</packaging>
     <scm>
         <connection>scm:git:https://github.com/lolo101/MsgViewer.git</connection>
-	<tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <modules>
         <module>FrameWorkMinimized</module>
